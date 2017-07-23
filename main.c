@@ -2,6 +2,16 @@
 #include <stdlib.h>
 #include <math.h>
 
+#define K 5
+
+float calcDistance(int cols, float *av1, float *av2){
+    float distance = 0;
+    for (int i = 0; i < cols; ++i) {
+        distance += pow(av1[i]-av2[i], 2);
+    }
+    return sqrt(distance);
+};
+
 void ** create2dArray(int rows, int cols, int size){
     void ** array;
     array = (void **)malloc(sizeof(void *) * rows);
